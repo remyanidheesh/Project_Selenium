@@ -1,5 +1,7 @@
 package test;
 
+import static org.testng.Assert.assertEquals;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -19,8 +21,8 @@ public class ProjectTest extends BaseTest{
 	ProjectPage pp = new ProjectPage(driver);
 	String actual=pp.doProject("SELENIUM_PROJECT","ADD PROJECTS","SELENIUM_PROJECT");
 	String expected="SELENIUM_PROJECT";
-	sa.assertEquals(actual,expected);
-	sa.assertAll();//throws exception
+	Assert.assertEquals(actual,expected);
+	
   }
   @Test(priority=2,groups= {"regression"},retryAnalyzer = generaltests.Retry.class)
   public void verifySearchProject() {
@@ -31,8 +33,8 @@ public class ProjectTest extends BaseTest{
 		pp.clickProjects();
 		String actual=pp.search("SELENIUM_PROJECT");
 		String expected="SELENIUM_PROJECT";
-		sa.assertEquals(actual,expected);
-		sa.assertAll();
+		Assert.assertEquals(actual,expected);
+		
 	}
   @Test(priority=3,groups= {"smoke"})
   public void verifyEdit()
