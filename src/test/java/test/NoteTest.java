@@ -13,7 +13,7 @@ public class NoteTest extends BaseTest {
 		  lp.doLogin("admin@admin.com","12345678");
 		NotePage np = new NotePage(driver);
 		String actual=np.doNote("SELENIUM_NOTE", "ADD NOTES","SELENIUM_NOTE");
-		String expected="SELENIUM_PROJECT";
+		String expected="SELENIUM_NOTE";
 		Assert.assertEquals(actual,expected);
 	}
 	@Test(priority=2,groups= {"regression"})
